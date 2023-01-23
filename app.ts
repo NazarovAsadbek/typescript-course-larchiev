@@ -88,4 +88,28 @@ function log(message: string): void {
     console.log(message);
 }
 
-// Unknown
+// Unknown Испльзуется чаще всего при типизации ошибок
+// async function fetchData() {
+//     try {
+//         const response = await fetch("https://example.com");
+//         const data = await response.json();
+//         return data;
+//     } catch (error) {
+//         if (error instanceof Error) {
+//             console.error(e);
+//         }
+//     }
+// }
+//
+// fetchData()
+
+// Never - никогда не возвращает ничего
+function generateError(message: string): never {
+    throw new Error(message);
+}
+function dummpError(): never {
+    while(true) {}
+}
+
+// Null
+let a: null = null;
