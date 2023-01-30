@@ -246,3 +246,135 @@
 // const user2 = new User();
 // const user3 = new User(33);
 // const user4 = new User('Вася', 33);
+
+
+// enum PaymentStatus {
+//     Holded, Precesssed, Reversed
+// }
+//
+// class Payment {
+//     id: number;
+//     status: PaymentStatus;
+//     createdAt: Date;
+//     updatedAt: Date;
+//
+//     constructor(id: number) {
+//         this.id = id;
+//         this.createdAt = new Date();
+//         this.status = PaymentStatus.Holded;
+//     }
+//
+//     getPaymentLifeTime(): number {
+//         return new Date().getTime() - this.createdAt.getTime();
+//     }
+//
+//     unholdPayment(): void {
+//         if (this.status === PaymentStatus.Precesssed) {
+//             throw new Error("Payment already processed");
+//         }
+//         this.status = PaymentStatus.Reversed;
+//         this.updatedAt = new Date();
+//     }
+// }
+//
+// const payment = new Payment(1);
+// const time = payment.getPaymentLifeTime();
+// console.log(time);
+
+
+// class User {
+//     _login: string;
+//     password: string;
+//
+//     set login(l: string | number){
+//         this._login = 'user' + l;
+//     }
+//     get login() {
+//         return this._login;
+//     }
+//     // getLogin(l: string) {
+//     //     this.login = 'user' + l;
+//     // }
+// }
+//
+// const user = new User();
+// user.login = "John";
+
+// interface ILogger {
+//     log(...args): void;
+//     error(...args): void;
+// }
+//
+// class Logger implements ILogger {
+//     log(...args: any[]): void  {
+//         console.log(...args);
+//     }
+//
+//     error(...args: any[]): void {
+//         console.error(...args);
+//     }
+// }
+// type PaymentStatus = 'new' | 'paid' | 'canceled';
+//
+// class Payment {
+//     id: number;
+//     status: PaymentStatus = 'new';
+//
+//     constructor(id: number) {
+//         this.id = id;
+//     }
+//
+//     pay() {
+//         this.status = 'paid';
+//     }
+// }
+//
+// class ParsistedPayment extends Payment {
+//     databaseId: number;
+//     paidAt: Date;
+//
+//     constructor(id: number) {
+//         super(id);
+//         this.databaseId = id;
+//         this.paidAt = new Date();
+//     }
+// }
+
+// class User {
+//     name: string = "user";
+//
+//     constructor() {
+//         console.log(this.name)
+//     }
+// }
+//
+// class Admin extends User {
+//     name: string = "admin";
+//     constructor() {
+//         super();
+//         console.log(this.name);
+//     }
+// }
+
+// class UserService {
+//     private static db: any;
+//
+//     static getUser(id: number) {
+//         return this.db.find(id);
+//     }
+// }
+
+// class Payment {
+//     private date: Date = new Date();
+//
+//     getDate() {
+//         return this.date;
+//     }
+// }
+//
+// const p = new Payment();
+// console.log(p.getDate());
+
+abstract class Controller {
+    abstract handle(req: any): void;
+}
