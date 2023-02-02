@@ -375,6 +375,25 @@
 // const p = new Payment();
 // console.log(p.getDate());
 
-abstract class Controller {
-    abstract handle(req: any): void;
+// abstract class Controller {
+//     abstract handle(req: any): void;
+// }
+
+const arr: Array<number> = [1, 2, 3]
+
+async function test() {
+    const a = await new Promise<number>((resolve, reject) => {
+        resolve(1);
+    })
+}
+
+const check: Record<number, boolean> = {
+    1: true,
+    2: false
+}
+
+
+function getSplitedHalf<T>(data: Array<T>): Array<T> {
+    const l = data.length / 2;
+    return data.splice(0, l);
 }
