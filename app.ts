@@ -379,21 +379,162 @@
 //     abstract handle(req: any): void;
 // }
 
-const arr: Array<number> = [1, 2, 3]
+// const arr: Array<number> = [1, 2, 3];
+//
+// async function test() {
+//     const a = await new Promise<number>((resolve, reject) => {
+//         resolve(1);
+//     })
+// };
+//
+// const check: Record<number, boolean> = {
+//     1: true,
+//     2: false
+// };
+//
+//
+// function getSplitedHalf<T>(data: Array<T>): Array<T> {
+//     const l = data.length / 2;
+//     return data.splice(0, l);
+// };
 
-async function test() {
-    const a = await new Promise<number>((resolve, reject) => {
-        resolve(1);
-    })
-}
+// function toString<T>(data: T): string | undefined {
+//     if (Array.isArray(data)) {
+//         return data.toString()
+//     }
+//     switch (typeof data) {
+//         case 'string':
+//             return data;
+//         case "number":
+//         case "symbol":
+//         case "bigint":
+//         case "boolean":
+//         case "function":
+//             return data.toString();
+//         case 'object':
+//             return JSON.stringify(data);
+//         default:
+//         case "undefined":
+//     }
+// };
 
-const check: Record<number, boolean> = {
-    1: true,
-    2: false
-}
+// const data = [
+//     {id: 1, name: 'Vasya #1'},
+//     {id: 3, name: 'Vasya #3'},
+//     {id: 2, name: 'Vasya #2'},
+// ]
+//
+// interface ID {
+//     id: number;
+// }
+//
+// function sort<T extends ID>(data: T[], type: 'asc' | 'desc' = 'asc'): T[] {
+//     return data.sort((a, b) => {
+//         switch (type) {
+//             case 'asc':
+//                 return a.id - b.id;
+//             case 'desc':
+//                 return b.id - a.id;
+//         }
+//     })
+// }
 
 
-function getSplitedHalf<T>(data: Array<T>): Array<T> {
-    const l = data.length / 2;
-    return data.splice(0, l);
-}
+// class Resp<D, E> {
+//     data?: D;
+//     error?: E;
+//
+//     constructor(data?: D, error?: E) {
+//         if (data) {
+//             this.data = data;
+//         }
+//         if (error) {
+//             this.error = error;
+//         }
+//     }
+// }
+//
+// const res = new Resp<string, number>('data');
+//
+// class HTTPResp<F> extends Resp<string, number> {
+//     code: F;
+//
+//     constructor(code: F) {
+//         super();
+//         this.code = code;
+//     }
+//
+//     setCode(code: F) {
+//         this.code = code;
+//     }
+// }
+
+// interface IUser {
+//     name: string;
+//     age: number;
+// }
+//
+// type KeysOfUser = keyof IUser;
+//
+
+// interface Data {
+//     group: number;
+//     name: string;
+// }
+//
+// const data: Data[] = [
+//     {group: 1, name: 'a'},
+//     {group: 1, name: 'b'},
+//     {group: 2, name: 'c'},
+// ]
+//
+// interface IGorup<T> {
+//     [key: string]: T[];
+// }
+//
+// type key = string | number | symbol;
+//
+// function group<T extends Record<key, any>>(array: T[], key: keyof T): IGorup<T> {
+//     return array.reduce<IGorup<T>>((map: IGorup<T>, item: Record<key, any>) => {
+//         const itemKey = item[key];
+//         let curEl = map[itemKey]
+//         if (Array.isArray(curEl)) {
+//             curEl.push(item);
+//         } else {
+//             curEl = [item];
+//         }
+//         map[itemKey] = curEl;
+//         return map;
+//     }, {})
+// }
+//
+// const res = group<Data>(data, 'group');
+// console.log(res)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
